@@ -211,3 +211,5 @@ $RECYCLE.BIN/
 
 
 swagger-ui/
+.vs/
+project.lock.json

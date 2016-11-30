@@ -2,6 +2,7 @@
 using Swagger.ObjectModel;
 using Swagger.ObjectModel.ApiDeclaration;
 using System;
+using System.Reflection;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -186,7 +187,7 @@ namespace Nancy.Swagger
 
         public static IEnumerable<Model> ToModel(this SwaggerModelData model, IEnumerable<SwaggerModelData> knownModels = null)
         {
-            var classProperties = model.Properties.Where(x => !Primitive.IsPrimitive(x.Type) && !x.Type.IsEnum && !x.Type.IsGenericType);
+            var classProperties = model.Properties.Where(x => !Primitive.IsPrimitive(x.Type) && !x.Type.GetTypeInfo().IsEnum && !x.Type.GetTypeInfo().IsGenericType);
 
             var modelsData = knownModels ?? Enumerable.Empty<SwaggerModelData>();
 
@@ -352,12 +353,12 @@ namespace Nancy.Swagger
         
         internal static bool IsImplicitlyRequired(this Type type)
         {
-            return type.IsValueType && !IsNullable(type);
+            return type.GetTypeInfo().IsValueType && !IsNullable(type);
         }
 
         internal static bool IsNullable(Type type)
         {
-            return type.IsGenericType && type.GetGenericTypeDefinition() == typeof(Nullable<>);
+            return type.GetTypeInfo().IsGenericType && type.GetGenericTypeDefinition() == typeof(Nullable<>);
         }
     }
 }

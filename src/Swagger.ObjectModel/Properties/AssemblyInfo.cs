@@ -2,12 +2,20 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("Swagger.ObjectModel")]
-[assembly: AssemblyDescription("A .NET object model for the Swagger spec.")]
+// General Information about an assembly is controlled through the following
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Swagger.ObjectModel")]
+[assembly: AssemblyTrademark("")]
 
+// Setting ComVisible to false makes the types in this assembly not visible
+// to COM components.  If you need to access a type in this assembly from
+// COM, set the ComVisible attribute to true on that type.
 [assembly: ComVisible(false)]
 
-[assembly: Guid("61e06a51-5890-4ffe-a7cc-388a09b32b05")]
+// The following GUID is for the ID of the typelib if this project is exposed to COM
+[assembly: Guid("b174be3f-93a8-49cd-8e60-4625bdce99c2")]
 
 [assembly: InternalsVisibleTo("Swagger.ObjectModel.Tests")]

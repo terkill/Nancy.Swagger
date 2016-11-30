@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0-*",
+
+  "dependencies": {
+    "Fody": "1.29.4",
+    "JetBrains.Annotations": "10.2.1",
+    "Nancy": "2.0.0-barneyrubble",
+    "NETStandard.Library": "1.6.1",
+    "Swagger.ObjectModel": "1.0.0-*"
+  },
+
+  "frameworks": {
+    "net462": { },
+    "netstandard1.6": {
+      "imports": "dnxcore50",
+      "dependencies": {
+        "System.Reflection": "4.3.0"
+      }
+    }
+  }
+}

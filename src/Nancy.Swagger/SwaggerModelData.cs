@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -35,7 +36,7 @@ namespace Nancy.Swagger
 
         private IEnumerable<SwaggerModelPropertyData> GetPropertiesFromType(Type type)
         {
-            return type.GetProperties()
+            return type.GetTypeInfo().GetProperties()
                 .Select(property => new SwaggerModelPropertyData
                 {
                     Name = property.Name,

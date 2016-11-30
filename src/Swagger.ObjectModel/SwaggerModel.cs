@@ -33,7 +33,7 @@ namespace Swagger.ObjectModel
             // Enums should use value from SwaggerEnumValueAttribute if it exists.
             protected override object SerializeEnum(Enum @enum)
             {
-                var member = @enum.GetType().GetMember(@enum.ToString()).Single();
+                var member = @enum.GetType().GetTypeInfo().GetMember(@enum.ToString()).Single();
 
                 var attribute = member.GetCustomAttribute<SwaggerEnumValueAttribute>();
                 if (attribute != null && !string.IsNullOrEmpty(attribute.Value))
@@ -77,7 +77,7 @@ namespace Swagger.ObjectModel
             // Serialized properties should use name from SwaggerPropertyAttribute if it exists.
             internal override IDictionary<string, ReflectionUtils.GetDelegate> GetterValueFactory(Type type)
             {
-                if (!type.IsDefined<SwaggerDataAttribute>())
+                if (!type.GetTypeInfo().IsDefined<SwaggerDataAttribute>())
                 {
                     return base.GetterValueFactory(type);
                 }
@@ -91,7 +91,7 @@ namespace Swagger.ObjectModel
             // Serialized properties should use name from SwaggerPropertyAttribute if it exists.
             internal override IDictionary<string, KeyValuePair<Type, ReflectionUtils.SetDelegate>> SetterValueFactory(Type type)
             {
-                if (!type.IsDefined<SwaggerDataAttribute>())
+                if (!type.GetTypeInfo().IsDefined<SwaggerDataAttribute>())
                 {
                     return base.SetterValueFactory(type);
                 }

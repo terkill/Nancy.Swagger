@@ -1,10 +1,19 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("Nancy.Swagger")]
-[assembly: AssemblyDescription("Nancy plugin for generated API documentation in Swagger format")]
+// General Information about an assembly is controlled through the following
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Nancy.Swagger")]
+[assembly: AssemblyTrademark("")]
 
+// Setting ComVisible to false makes the types in this assembly not visible
+// to COM components.  If you need to access a type in this assembly from
+// COM, set the ComVisible attribute to true on that type.
 [assembly: ComVisible(false)]
 
-[assembly: Guid("6b5646f5-ffb0-4a50-b323-770461c81e6e")]
+// The following GUID is for the ID of the typelib if this project is exposed to COM
+[assembly: Guid("644ce13e-63ae-4796-8e7e-b50586d73efb")]

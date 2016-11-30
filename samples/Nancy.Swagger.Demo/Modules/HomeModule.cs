@@ -7,11 +7,11 @@ namespace Nancy.Swagger.Demo.Modules
     {
         public HomeModule()
         {
-            Get["Home", "/"] = _ => "Hello Swagger!";
+            Get("/", _ => "Hello Swagger! Visit http://localhost:3999/docs/index.html and enter http://localhost:3999/api-docs in the Swagger UI", null, "Home");
 
-            Get["GetUsers", "/users"] = _ => new[] { new User { Name = "Vincent Vega", Age = 45 } };
+            Get("/users", _ => new[] { new User { Name = "Vincent Vega", Age = 45 } }, null, "GetUsers");
 
-            Post["PostUsers", "/users"] = _ =>
+            Post("/users", _ =>
             {
                 var result = this.BindAndValidate<User>();
 
@@ -22,7 +22,7 @@ namespace Nancy.Swagger.Demo.Modules
                 }
 
                 return Negotiate.WithModel(result).WithStatusCode(HttpStatusCode.Created);
-            };
+            }, null, "PostUsers");
         }
     }
 }

@@ -64,7 +64,6 @@ using System.Dynamic;
 #endif
 using System.Globalization;
 using System.Reflection;
-using System.Runtime.Serialization;
 using System.Text;
 using Swagger.ObjectModel.Reflection;
 
@@ -541,7 +540,7 @@ namespace Swagger.ObjectModel
             object obj;
             if (TryDeserializeObject(json, out obj))
                 return obj;
-            throw new SerializationException("Invalid JSON string");
+            throw new ArgumentException("Invalid JSON string", json);
         }
 
         /// <summary>

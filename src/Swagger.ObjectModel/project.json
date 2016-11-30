@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0-*",
+  "dependencies": {
+    "Fody": "1.29.4",
+    "JetBrains.Annotations": "10.2.1",
+    "NETStandard.Library": "1.6.1",
+    "SimpleJson": "0.38.0",
+    "Visualize.Fody": "0.4.5"
+  },
+  "frameworks": {
+    "net462": {
+      "dependencies": {
+      }
+    },
+    "netstandard1.6": {
+      "imports": "dnxcore50",
+      "dependencies": {
+        "System.Reflection": "4.3.0",
+        "System.Reflection.Extensions": "4.3.0",
+        "System.Dynamic.Runtime": "4.3.0"
+      }
+    }
+  },
+  "buildOptions": {
+    "define": [ "SIMPLE_JSON_TYPEINFO" ]
+  }
+}

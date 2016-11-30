@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0-*",
+
+  "dependencies": {
+    "Nancy": "2.0.0-barneyrubble",
+    "Nancy.Swagger": "1.0.0-*",
+    "NETStandard.Library": "1.6.1",
+    "Swagger.ObjectModel": "1.0.0-*"
+  },
+
+  "frameworks": {
+    "net462": { },
+    "netstandard1.6": {
+      "imports": "dnxcore50",
+      "dependencies": {
+        "System.Reflection": "4.3.0"
+      }
+    }
+  }
+}
